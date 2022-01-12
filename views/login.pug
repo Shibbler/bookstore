@@ -1,0 +1,13 @@
+script(src="client.js")
+link(rel='stylesheet', href='style.css')
+if(error)
+    script.
+        alert("Bad Login, try again");
+body
+    h1 Login Page
+    form(action='/login' method="post")
+        p Username: 
+            input(type="text" name= "username" required)
+        p Unique User ID: 
+            input(type="text" name= "userID" required)
+        button(type="submit") Login

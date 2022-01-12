@@ -1,0 +1,55 @@
+script(src="client.js")
+link(rel='stylesheet', href='style.css')
+if (session.isAdmin)
+    header
+        a(href="/")= "Home Page"
+        br
+        a(href="/insertBook")= `Book Insert Page`
+        br
+        a(href=`/bookSearch`)= `Book Search Page`
+        br
+        a(href=`/currentCart`)= `View Cart`
+        br
+        a(href=`/reports`)= `Reports`
+        br
+        a(href='/deleteBooks')= "Book Deletion"
+        br
+        a(href='/logout')= "Logout"
+else 
+    header
+        a(href="/")= "Home Page"
+        br
+        a(href=`/bookSearch`)= `Book Search Page`
+        br
+        a(href='/logout')= "Logout"
+        br
+        a(href=`/currentCart`)= `View Cart`
+        br
+
+body
+    h1 Generate Reports Below
+
+    form(action='/reports/genre' method="get")
+        button(type="submit") View Sales by Genre
+
+    form(action='/reports/author' method="get")
+        button(type="submit") View Sales by Author
+
+    form(action='/reports/saleDates' method="get")
+        button(type="submit") View Sales by Date
+
+    form(action='/reports/dateRange' method="post")
+        p Start Date (enter as YYYY-MM-DD): 
+            input(type="text" name= "startDate" required)
+        p End Date (enter as YYYY-MM-DD): 
+            input(type="text" name= "endDate" required)
+        button(type="submit") View # of Sales between Dates
+
+    form(action='/reports/dateRangeWithBook' method="post")
+        p Start Date (enter as YYYY-MM-DD): 
+            input(type="text" name= "startDateBook" required)
+        p End Date (enter as YYYY-MM-DD): 
+            input(type="text" name= "endDateBook" required)
+        p ISBN to search: 
+            input(type="text" name= "isbn" required)
+        button(type="submit") View # of Sales between Date for Specific Book

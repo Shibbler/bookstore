@@ -1,0 +1,27 @@
+{
+  "name": "-bookstore",
+  "version": "1.0.0",
+  "description": "Final Project for COMP3005",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Owen-Allen/-bookstore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Owen-Allen/-bookstore/issues"
+  },
+  "homepage": "https://github.com/Owen-Allen/-bookstore#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "pg": "^8.7.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {}
+}
